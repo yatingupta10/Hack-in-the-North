@@ -45,12 +45,15 @@ body{
 }
 
 .navbar .navbar-nav > .active > a {
-  background: transparent;
-  color: #ffffff;
+  background: #fff;
+  color: #000;
+  opacity :0.9;
 }
 .navbar .navbar-nav > .active > a:hover {
-  background: transparent;
-  color: #ffffff;
+  background: #fff;
+  color: #000;
+  opacity :0.9;
+  text-decoration: underline;
 }
 .navbar .navbar-nav > .active > a:focus {
   background: transparent;
@@ -80,11 +83,9 @@ body{
   color: #eeeeee;
 }
 .navbar .navbar-nav > li > a {
-  background: transparent;
-    color: #ffffff;
-    -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
-   text-decoration: bold;
+  background: #fff;
+  color: #000;
+  opacity :0.8;
    font-size: 20px;
 }
 

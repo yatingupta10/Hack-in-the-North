@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head 
+         content must come *after* these tags -->
+    <title>RailwayStats</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/mystyles.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    <!-- HTML5cc shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header class="jumbotron">
+        <!-- Main component for a primary marketing message or call to action -->
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color: #fff;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="color: #fff">Railway Statistics</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#"><i class="fa fa-home"></i>
+ Home</a></li>
+                        <li><a href="#" data-toggle="modal" data-target=".search-modal-lg"><i class="fa fa-search"></i>
+ Search</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-star"></i> Rate
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="fa fa-calendar"></i> &nbspPunctuality</a></li>
+                                <li><a href="#"><i class="fa fa-cutlery"></i> &nbspFood</a></li>
+                                <li><a href="#"><i class="fa fa-users"></i> Crowd</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Additional ratings</li>
+                                <li><a href="#">Cooling</a></li>
+                                <li><a href="#">Seat availability</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-user"></i> About</a></li>
+                        <li><a href="contact us.html"><i class="fa fa-phone"></i> Contact</a></li>
+                        <!-- social media icons to left>
+                    <li>
+                    <div style="text-align:right">
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                    </div>    
+                    </li>
+                <-->
+                    </ul>
+                </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <h1>RailwayStats <i class="fa fa-bar-chart"></i>
+</h1>
+                    <p style="padding:15px;"></p>
+                    <p>Rate the trains and choose the best one for your journey.</p>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Modals -->
+    <!-- Modal for search-->
+    <div class="modal fade search-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Search</h4>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <span><b>FROM</b></span><select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            </select>
+                    </div>
+                    <div class="col-sm-5">
+                        <span><b>TO</b></span><select class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <input type="submit" class="btn btn-primary btn-md"></input>
+      </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <h2>Railway Stats</h2>
+                <p><font size=4>Railway stats is a place where people can look for the best train to proceed for their journey. We try to provide people : </p></font>
+                    <ul>
+                        <li><h4>Comfort</h4></li>
+                        <li><h4>Best Train Options</h4></li>
+                        <li><h4>Travellor's Ratings</h4></li>
+                        <li><h4>Best of facilities</h4></li>
+                        <li><h4>and <i> much more...</i></h4></li>
+                    </ul>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+                    <h2><i>Our Team:</i></h2>
+                </div>
+            </div>   
+        
+    </div>    
+    <footer class="row-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"> Home</a></li>
+                        <li><a href="#"> Search</a></li>
+                        <li><a href="#"> Rate</a></li>
+                        <li><a href="#"> About</a></li>
+                        <li><a href="#"> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                    <h5>Our Address</h5>
+                    <address>
+                        Maharaja Surajmal Institute of Technology
+                        <br> C-4, Janakpuri
+                        <br> New Delhi
+                        <br>
+                        <i class="fa fa-phone"></i> (+91)-9953412700
+                        <br>
+                        <i class="fa fa-fax"></i> 011-28122998
+                        <br>
+                        <i class="fa fa-envelope"></i>:
+                        <a href="mailto:help@railwaystats.com"> Mail Us</a>
+                    </address>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <div class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <p style="padding:10px;"></p>
+                    <p align=center>© Copyright 2016 Railway Stats</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -26,12 +26,22 @@
         <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
     function initialize() {
+        var myLatLng = {lat: 28.62079, lng: 77.0918408};
+
     var mapProp = {
         center:new google.maps.LatLng(28.6207947,77.0925366),
         zoom:15,
+        disableDefaultUI: true,
+        scrollwheel: false,
         mapTypeId:google.maps.MapTypeId.ROADMAP
     };
+
     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    });
+    
     }
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
@@ -72,8 +82,8 @@
                                 <li><a href="#">Seat availability</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><i class="fa fa-user"></i> About</a></li>
-                        <li class="active"><a href="#"><i class="fa fa-phone"></i> Contact</a></li>
+                        <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
+                        <li class="active"><a href="contact-us.html"><i class="fa fa-phone"></i> Contact</a></li>
                         <!-- social media icons to left>
                     <li>
                     <div style="text-align:right">

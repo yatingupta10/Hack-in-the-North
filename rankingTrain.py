@@ -25,38 +25,43 @@ def ExpectedDelay(TrainNo):
         return -1
     return avgdelay/len(delays)
 
-source='ndls'
-destination='ald'
+# source='ndls'
+# destination='ald'
+source=['anvr','anvt','dec','dee','dkz','dli','dsj','ndls','nzm','szm']
+destination=['ald','aly']
 date='27-08' #dd-mm
 apikey='iizgz6230'
-
-url='http://api.railwayapi.com/between/source/'+source+'/dest/'+destination+'/date/'+date+'/apikey/'+apikey+'/'
-
-datas = urllib2.urlopen(url).read()
-datas=json.loads(datas)
-#print data
-
-
 import sqlite3 as sq3
 conn=sq3.connect('delay.db')
 c=conn.cursor()
 c.execute('''DROP TABLE IF EXISTS "delay";''')
-c.execute('''CREATE TABLE delay (TrainNO int pmary key,delay int,name char(20))''')
-
-trains=[]
-#i=5
-for data in datas['train']:
-    train={}
-    name=train['name']=data['name']
-    no=train['no']=data['number']
-    delay=train['delay']=ExpectedDelay(train['no'])
-    trains.append(train)
-    c.execute("INSERT INTO delay VALUES(?, ?, ?)",(no,delay,name))
-    print train
-    # i=i-1
-    # if(i<0):
-    #     break
+c.execute('''CREATE TABLE delay (TrainNO int pmary key,delay int,name char(20),source char(20),destination char(20))''')
+def delay(source,destination,date,apikey):
+  while 1:
+    url='http://api.railwayapi.com/between/source/'+source+'/dest/'+destination+'/date/'+date+'/apikey/'+apikey+'/'
+    try:
+      datas = urllib2.urlopen(url).read()
+      break
+    except URLError as e:
+      continue
+  datas=json.loads(datas)
+  #print data
+  #i=5
+  j=1
+  for data in datas['train']:
+      print j
+      j=j+1
+      name=data['name']
+      no=data['number']
+      delay=ExpectedDelay(no)
+      c.execute("INSERT INTO delay VALUES(?, ?, ?, ?, ?)",(no,delay,name,source,destination))
+      # i=i-1
+      # if(i<0):
+      #     break
+i=1
+for sour in source:
+  for dest in destination:
+    delay(sour,dest,date,apikey)
+    print "------------------------------------------"+str(i)+"----------------------------------------------"
+    i=i+1
 conn.commit()
-for row in c.execute('select name,delay from delay'):
-    print row
-print trains

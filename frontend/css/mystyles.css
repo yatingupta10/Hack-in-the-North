@@ -19,8 +19,13 @@
 .jumbotron {
     padding:70px 30px 70px 30px;
     margin:0px auto;
-    background: #e8edf3 ;
-    color:#22264b;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    background-position: center;
+    color:#fff;
+    text-align: left;
+    text-decoration: bold;
 }
 
 address{
@@ -30,42 +35,56 @@ address{
 }
 
 body{
-    padding:50px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
     z-index:0;
 }
 
-.navbar-inverse {
-     background: #22264b;	
+.navbar {
+  background: transparent;
+  color: #ffffff;
 }
 
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-    color: #fff;
-    background: #1A237E;
+.navbar .navbar-nav > .active > a {
+  background: transparent;
+  color: #ffffff;
+}
+.navbar .navbar-nav > .active > a:hover {
+  background: transparent;
+  color: #ffffff;
+}
+.navbar .navbar-nav > .active > a:focus {
+  background: transparent;
+    color: #ffffff;
+}
+.navbar .navbar-nav > .open > a {
+  background: transparent;
+  color: #ffffff;
+}
+.navbar .navbar-nav > .open > a:hover {
+  background: transparent;
+  color: #ffffff;
+}
+.navbar .navbar-nav > .open > a:focus {
+  background: transparent;
+  color: #ffffff;
+}
+.navbar .navbar-nav .open .dropdown-menu > li > a {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: #000000;
+}
+.navbar .navbar-nav .open .dropdown-menu {
+  background-color: #303f9f;
+  color: #eeeeee;
+}
+.navbar .navbar-nav > li > a {
+  background: transparent;
+    color: #ffffff;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+   text-decoration: bold;
+   font-size: 20px;
 }
 
-.navbar-inverse .navbar-nav > .open > a,
- .navbar-inverse .navbar-nav > .open > a:hover,
- .navbar-inverse .navbar-nav > .open > a:focus {
-    color: #fff;
-    background: #1A237E;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
-.navbar-inverse .navbar-nav .open .dropdown-menu {
-    background-color: #303F9F;
-    color:#eeeeee;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
-    color:#000000;
-}
- 
-.navbar-inverse .navbar-brand {
-	color:#e8edf3;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-header {
-    color : #91A4AD;
-}

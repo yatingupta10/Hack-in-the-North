@@ -92,3 +92,8 @@ body{
 .navbar .navbar-nav .open .dropdown-menu .dropdown-header {
   color: #98A2CE;
  } 
+
+#map {
+  padding-bottom: 50px;
+  padding-right: 50px;
+}

@@ -89,7 +89,18 @@ body{
    font-size: 20px;
 }
 
+<<<<<<< HEAD
 .item img{
     width: auto;
 }
 
+=======
+.navbar .navbar-nav .open .dropdown-menu .dropdown-header {
+  color: #98A2CE;
+ } 
+
+#map {
+  padding-bottom: 50px;
+  padding-right: 50px;
+}
+>>>>>>> d2266d75d8bd91a0439d3adb40604ac0cff5c566

@@ -8,4 +8,8 @@ def contact(request):
 
 def about(request):
     return render(request, 'trainstat/about.html', {})
+
+def rate(request):
+    return render(request, 'trainstat/rate.html', {})
+
 # Create your views here.

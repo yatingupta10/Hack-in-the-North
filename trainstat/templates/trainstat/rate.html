@@ -39,11 +39,11 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/"><i class="fa fa-home"></i>
+                        <li><a href="index.html"><i class="fa fa-home"></i>
  Home</a></li>
                         <li><a href="#" data-toggle="modal" data-target=".search-modal-lg"><i class="fa fa-search"></i>
  Search</a></li>
-                        <li>
+                        <li class="active">
                             <a href="rate.html">
                                 <i class="fa fa-star"></i> Rate
                             </a>
@@ -60,6 +60,11 @@
                     </ul>
                 </div>
         </nav>
+        <h1>New Entry</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
@@ -73,63 +78,142 @@
             </div>
         </div>
     </header>
-    <!-- Carousel-->
-    <div class="row row-content">
-        <div class="col-xs-12">
-            <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img class="img-responsive" src="../../static/img/car1.jpg" alt="Maharaja Express">
-                        <div class="carousel-caption">
-                            <h2 style="color: #8A0737;">Comfort</h2>
-                            <p style="color: #8A0737;">We make your travel experience very comfortable</p>
-                            <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img class="img-responsive" src="../../static/img/car2.jpg" alt="Money">
-                        <div class="carousel-caption">
-                            <h2 style="color: green;">Savings</h2>
-                            <p style="color: green;">We save your hard earned money!</p>
-                            <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
-                        </div>
-                    </div>
-                    <div class='item'>
-                        <img class="img-responsive" src="../../static/img/car3.jpg" alt="Time">
-                        <div class="carousel-caption">
-                            <h2 style="color: #2917B5">Time</h2>
-                            <p style="color: #2917B5">Above all, we save your Time.</p>
-                            <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#mycarousel" data-slide-to="1"></li>
-                    <li data-target="#mycarousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                <div class="btn-group" id="carouselButtons">
-                    <button class="btn btn-danger btn-xs" id="carousel-pause">
-                        <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
-                    </button>
-                    <button class="btn btn-danger btn-xs" id="carousel-play">
-                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
+
+    <!-- Form-->
+
+    <div class="container" id='feedback'>
+    <div class="row">
+    <div class="col-sm-offset-1">
+    <h1>Feedback Form</h1>
     </div>
+    </div>
+    <p style="padding: 20px"></p>
+    <form class="form-horizontal">
+                <div class="form-group">
+                    <label class=" col-xs-3 col-sm-1 col-sm-offset-1" for='No'>Train No.</label>
+                    <input type="number" class=" col-xs offset-2 col-sm-4" id="No" placeholder="Train No.">
+                </div>
+              <div class="form-group">
+                <label for="Punctuality" class=" col-xs-3 col-sm-2 control-label">Punctuality</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="5">5
+                </label>
+                
+              </div>  
+              <div class="form-group">
+                <label for="Food" class="col-xs-3 col-sm-2 control-label">Food</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="Crowd" class="col-xs-3 col-sm-2 control-label">Crowd</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="Services" class="col-xs-3 col-sm-2 control-label">Services</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="Cooling" class="col-xs-3 col-sm-2 control-label">Cooling</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="SeatAvailibility" class="col-xs-3 col-sm-2 control-label">Seat Availibility</label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                        <div class=" col-xs-offset-3 col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Send Feedback</button>
+                        </div>
+                    </div>
+    </div>
+
     <!-- Modals -->
     <!-- Modal for search-->
     <div class="modal fade search-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">

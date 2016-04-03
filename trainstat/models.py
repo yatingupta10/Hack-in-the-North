@@ -17,3 +17,18 @@ class Review(models.Model):
 
     def __str__(self):
         return self.Name
+
+class Rank(models.Model):
+    Source = models.CharField(max_length=200)
+    Destination = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.Name
+
+class Delay(models.Model):
+    Source = models.CharField(max_length=100)
+    Destination = models.CharField(max_length=500)
+    Delay = models.IntegerField()
+    TrainNo = models.IntegerField()
+    def __str__(self):
+        return self.Name

@@ -1,0 +1,5 @@
+<!-- Source is {{train.Source}}. <br>
+Destination is {{train.Destination}} -->
+{% for tr in trains%}
+  {{tr[2]}}->{{tr[1]}}
+{% end for %}

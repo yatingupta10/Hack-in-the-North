@@ -104,3 +104,7 @@ body{
   padding-right: 50px;
 }
 
+#feedback{
+  min-height: 500px;
+}
+

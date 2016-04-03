@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,43 +10,17 @@
          content must come *after* these tags -->
     <title>RailwayStats</title>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/mystyles.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap-social.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/mystyles.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/bootstrap-social.css' %}" >
     <!-- HTML5cc shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <!--Google map for contact-->
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <script>
-    function initialize() {
-        var myLatLng = {
-            lat: 28.62079,
-            lng: 77.0918408
-        };
-
-        var mapProp = {
-            center: new google.maps.LatLng(28.6207947, 77.0925366),
-            zoom: 15,
-            disableDefaultUI: true,
-            scrollwheel: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-        });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 </head>
 
 <body>
@@ -54,7 +29,7 @@
         <nav class="navbar navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color: #fff;">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="color: #fff">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -68,13 +43,13 @@
  Home</a></li>
                         <li><a href="#" data-toggle="modal" data-target=".search-modal-lg"><i class="fa fa-search"></i>
  Search</a></li>
-                        <li>
+                        <li class="active">
                             <a href="rate.html">
                                 <i class="fa fa-star"></i> Rate
                             </a>
                         </li>
                         <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
-                        <li class="active"><a href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
+                        <li><a href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
                         <!-- social media icons to left>
                     <li>
                     <div style="text-align:right">
@@ -85,6 +60,11 @@
                     </ul>
                 </div>
         </nav>
+        <h1>New Entry</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-8">
@@ -98,6 +78,142 @@
             </div>
         </div>
     </header>
+
+    <!-- Form-->
+
+    <div class="container" id='feedback'>
+    <div class="row">
+    <div class="col-sm-offset-1">
+    <h1>Feedback Form</h1>
+    </div>
+    </div>
+    <p style="padding: 20px"></p>
+    <form class="form-horizontal">
+                <div class="form-group">
+                    <label class=" col-xs-3 col-sm-1 col-sm-offset-1" for='No'>Train No.</label>
+                    <input type="number" class=" col-xs offset-2 col-sm-4" id="No" placeholder="Train No.">
+                </div>
+              <div class="form-group">
+                <label for="Punctuality" class=" col-xs-3 col-sm-2 control-label">Punctuality</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Punctuality" id="p1" value="5">5
+                </label>
+                
+              </div>  
+              <div class="form-group">
+                <label for="Food" class="col-xs-3 col-sm-2 control-label">Food</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Food" id="f1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="Crowd" class="col-xs-3 col-sm-2 control-label">Crowd</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Crowd" id="c1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="Services" class="col-xs-3 col-sm-2 control-label">Services</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Services" id="s1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="Cooling" class="col-xs-3 col-sm-2 control-label">Cooling</label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="Cooling" id="c1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                <label for="SeatAvailibility" class="col-xs-3 col-sm-2 control-label">Seat Availibility</label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="1">1
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="2">2
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="3">3
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="4">4
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="SeatAvailibility" id="sa1" value="5">5
+                </label>
+                
+              </div>
+              <div class="form-group">
+                        <div class=" col-xs-offset-3 col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Send Feedback</button>
+                        </div>
+                    </div>
+    </div>
+
     <!-- Modals -->
     <!-- Modal for search-->
     <div class="modal fade search-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -135,22 +251,7 @@
             </div>
         </div>
     </div>
-    <div class="container" id="map">
-        <div class="row-content">
-            <div class="col-xs-12 col-sm-5">
-                <div id="googleMap" style="width:100%;height:380px;">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-7">
-                <h2 align="center">Maharaja Surajmal Institute of Technology</h2>
-                <br>
-                <h3 align="center">C-4, Janakpuri <br> New Delhi
-            <br> </h3>
-                <h4 style="text-align: center;"><i class="fa fa-phone"></i> (+91)-9953412700 </h4>
-                <br>
-            </div>
-        </div>
-    </div>
+    <!--Footer-->
     <footer class="row-footer">
         <div class="container">
             <div class="row">
@@ -199,7 +300,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
 </body>
 
 </html>

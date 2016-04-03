@@ -4,14 +4,6 @@ from .forms import RankForm
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
 
-
-
-
-
-
-
-
-# ---------------------------------------------------------------------------------------------------
 def index(request):
     return render(request, 'trainstat/index.html', {})
 
@@ -40,3 +32,6 @@ def rank(request):
     else:
         form = RankForm()
     return render(request, 'trainstat/rank.html', {'form': form})
+
+def rate(request):
+    return render(request, 'trainstat/rate.html', {})

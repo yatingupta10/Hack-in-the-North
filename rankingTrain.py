@@ -35,7 +35,7 @@ import sqlite3 as sq3
 conn=sq3.connect('delay.db')
 c=conn.cursor()
 c.execute('''DROP TABLE IF EXISTS "delay";''')
-c.execute('''CREATE TABLE delay (TrainNO int pmary key,delay int,name char(20),source char(20),destination char(20))''')
+c.execute('''CREATE TABLE delay (TrainNO real pmary key,delay real,name text,source text,destination text''')
 def delay(source,destination,date,apikey):
   while 1:
     url='http://api.railwayapi.com/between/source/'+source+'/dest/'+destination+'/date/'+date+'/apikey/'+apikey+'/'

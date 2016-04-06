@@ -108,3 +108,10 @@ body{
   min-height: 500px;
 }
 
+.navbar-static-top {
+  margin: 0px;
+  min-height: 0px;
+  padding-top: 0px;
+  position: relative;
+  border-width: 0px;
+}
